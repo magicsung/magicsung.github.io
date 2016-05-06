@@ -1,0 +1,35 @@
+{
+  "name": "magicsung.github.io",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "node server.js",
+    "build:css": "node-sass ./css/main.scss ./css/main.css --output-style compressed --source-map ./css/main.map",
+    "build:js": "uglifyjs js/src/*.js -m -o js/app.js",
+    "watch:css": "onchange 'css/scss/**' -- npm run build:css",
+    "watch:js": "onchange 'js/src/*.js' -- npm run build:js",
+    "start": "parallelshell 'npm run server' 'npm run watch:css' 'npm run watch:js'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/magicsung/magicsung.github.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/magicsung/magicsung.github.io/issues"
+  },
+  "homepage": "http://magicsung.github.io",
+  "dependencies": {
+    "express": "^4.13.4"
+  },
+  "devDependencies": {
+    "node-sass": "^3.4.2",
+    "onchange": "^2.2.0",
+    "parallelshell": "^2.0.0",
+    "uglify-js": "^2.6.2",
+    "livereload": "^0.4.1"
+  }
+}

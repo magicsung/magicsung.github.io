@@ -1,0 +1,31 @@
+@keyframes slideInLeft {
+  from {
+    @include translate3d(-100%, 0, 0);
+    visibility: visible;
+  }
+
+  to {
+    @include translate3d(0, 0, 0);
+  }
+}
+.slideInLeft {
+  @include animation-name(slideInLeft);
+}
+@keyframes slideOutLeft {
+  from {
+    @include translate3d(0, 0, 0);
+  }
+
+  to {
+    visibility: hidden;
+    @include translate3d(-100%, 0, 0);
+  }
+}
+
+.slideOutLeft {
+  @include animation-name(slideOutLeft);
+}
+.animated {
+  @include animation-duration(.6s);
+  @include animation-fill-mode(both);
+}
