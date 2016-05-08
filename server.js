@@ -3,7 +3,7 @@ var app = express();
 var http = require('http').Server(app);
 livereload = require('livereload');
 
-app.use('/', express.static(__dirname + '/views'));
+app.use('/', express.static(__dirname + '/'));
 app.use('/css', express.static(__dirname + '/css'));
 app.use('/js', express.static(__dirname + '/js'));
 app.use('/image', express.static(__dirname + '/images'));
