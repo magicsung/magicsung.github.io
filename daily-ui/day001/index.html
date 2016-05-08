@@ -4,10 +4,39 @@
     <meta charset="utf-8">
     <title>Day001 sign up form</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" >
     <link rel="stylesheet" href="/css/lib/normalize.css" media="screen" title="no title" charset="utf-8">
     <link rel="stylesheet" href="./style.css" media="screen" title="no title" charset="utf-8">
   </head>
   <body>
-    <h1>Day001 - Sign up form</h1>
+    <header>
+      <h1>Day001 - Sign up form</h1>
+    </header>
+    <div class="sign-up center-block">
+      <div class="title">
+        <i class="material-icons title-icon text-shadow">&#xE037;</i>
+        <span class="text-shadow">Quickly sign up</span>
+      </div>
+      <div class="content center-block">
+        <form class="" action="index.html" method="post">
+          <div class="">
+            <input class="form-control" type="text" name="email" value="" placeholder="email">
+          </div>
+          <div class="">
+            <input class="form-control" type="password" name="password" value="" placeholder="password">
+          </div>
+          <div class="">
+            <input class="form-control" type="password" name="password-confirm" value="" placeholder="password again">
+          </div>
+          <div class="confirm">
+            <input type="checkbox" name="signup-confirm" value="" id="signup-confirm">
+            <label for="signup-confirm">confirm</label>
+          </div>
+          <div class="">
+            <input type="submit" name="name" value="sign up" class="btn btn-circle center-block">
+          </div>
+        </form>
+      </div>
+    </div>
   </body>
 </html>
