@@ -70,3 +70,8 @@ h1 {
   border: 1px solid #ccc;
   box-shadow: 1px 1px 5px 0 #858585;
 }
+
+.active {
+  background-color: #ff5c5c;
+  color: #fff;
+}
