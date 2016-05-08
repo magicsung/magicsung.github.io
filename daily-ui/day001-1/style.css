@@ -1,0 +1,137 @@
+body { background-color: #fdeae1; }
+.pull-right { float: right; }
+.pull-left { float: left; }
+.clearfix { clear: both; }
+.clearfix:before, .clearfix:after {
+  clear: both;
+  content: " ";
+  display: table;
+}
+.center-block {
+  display: block;
+  margin: 0 auto;
+}
+.relative { position: relative; }
+.mt-15 { margin-top: 15px; }
+.fz-1p5em {font-size: 1.5em;}
+.w70, .w30 {
+  float: left;
+  height: 250px;
+}
+.w70 { width: 70%; }
+.w30 { width: 30%; }
+.bottom {
+  position: absolute;
+  bottom: 10px;
+}
+
+.form-control {
+  width: 100%;
+  border: none;
+  box-shadow: 1px 1px 0 1px #deb19f;
+  padding: 5px 15px;
+  background-color: #f6c9b8;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  font-size: 1.2em;
+  line-height: 1.4em;
+  height: 2.2em;
+  outline: 0;
+  color: #fff;
+}
+.form-control:focus {
+  box-shadow: none;
+}
+.form-control::-webkit-input-placeholder {
+  color: #fff;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.sign-up {
+  background-color: #fff;
+  width: 800px;
+  position: relative;
+  top: 10%;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 1px 7px 5px 1px #6c6c6c;
+}
+.sign-up .head a {
+  color: #650000;
+  font-weight: bold;
+  text-decoration: none;
+  display: inline-block;
+  margin-left: 25px;
+  border-bottom: 4px solid #fff;
+  font-size: 1.5em;
+}
+.sign-up .head a:hover,
+.sign-up .head a.active {
+  border-bottom: 4px solid #f09292;
+}
+
+.sign-up .content {
+  position: relative;
+  min-height: 250px;
+  margin-left: 15%;
+}
+
+.btn {
+  border: 1px solid #ccc;
+}
+.btn-circle {
+  border: none;
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+  font-weight: bold;
+  color: #fff;
+  background-color: #ef9090;
+  box-shadow: 1px 3px 4px 0 #6c6c6c;
+}
+.btn-circle:hover {
+  box-shadow: inset 1px 1px 4px #333 !important;
+}
+.btn-sm {
+  height: 45px;
+  width: 45px;
+}
+
+.btn-group {
+  width: 160px;
+  height: 160px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+.social-login .btn {
+  box-shadow: none;
+  position: absolute;
+}
+.social-login .btn i {
+  font-size: 1.8em;
+  line-height: 1.6em;
+  width: 100%;
+  text-align: center;
+}
+.social-login .btn:nth-child(1) {
+  background-color: #325195;
+  top: 25px;
+  right: 20px;
+}
+.social-login .btn:nth-child(2) {
+  background-color: #4e82c3;
+  top: 50px;
+  right: 70px;
+}
+.social-login .btn:nth-child(3) {
+  background-color: #d0402a;
+  top: 100px;
+  right: 90px;
+}
+.btn-group #submit {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
