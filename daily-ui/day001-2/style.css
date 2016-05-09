@@ -1,0 +1,104 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  background: #c0c0c0; /* Old browsers */
+  background: -moz-linear-gradient(45deg,  #c0c0c0 0%, #e6e6e6 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(45deg,  #c0c0c0 0%,#e6e6e6 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(45deg,  #c0c0c0 0%,#e6e6e6 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c0c0c0', endColorstr='#e6e6e6',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+.ml-5 { margin-left: 5px; }
+.ml-15 { margin-left: 15px; }
+.mt-10 { margin-top: 10px; }
+.mt-20 { margin-top: 20px; }
+.mt-30 { margin-top: 30px; }
+.mt-40 { margin-top: 40px; }
+.mt-80 { margin-top: 80px; }
+.text-center { text-align: center; }
+.under-line {
+  border-bottom: 2px solid rgba(255, 255, 255, .2);
+  height: 2px;
+}
+.color-gray { color: #5e5f6b; }
+.fz-p8em { font-size: .8em; }
+a { text-decoration: none; }
+a:hover { color: #ddd; }
+
+.form {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  max-height: 680px;
+  transform: translate(-50%, -50%);
+	box-shadow: 0 20px 20px 5px #666;
+}
+.form-background {
+  position: relative;
+}
+
+.form .head {
+  margin-bottom: 90px;
+  font-size: 1.3em;
+}
+.form .head a {
+  text-decoration: none;
+  color: #9191a3;
+  margin-right: 40px;
+}
+.form .head a.active,
+.form .head a:hover {
+  color: #fff;
+  padding-bottom: 4px;
+  border-bottom: 2px solid #1359d9;
+}
+
+.form-content {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  padding: 90px 60px 40px 60px;
+}
+.input-group {
+  color: #fff;
+}
+.form-label {
+  position: relative;
+  display: block;
+  margin-bottom: 10px;
+  color: #9191a3;
+  font-size: .8em;
+}
+.form-control {
+  position: relative;
+  height: 40px;
+  left: 0;
+  border: none;
+  border-radius: 25px;
+  color: #fff;
+  padding: 0 20px 0 20px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+.form-input {
+  background-color: rgba(255, 255, 255, .1);
+  outline-width: 0;
+}
+.form .form-input:focus {
+  background-color: rgba(0, 0, 0, 0);
+  border: 1px solid #9295a8;
+}
+.btn-submit {
+  background-color: #1359d9;
+  font-size: .9em;
+}
+.btn-submit:hover {
+  background-color: #4485f1;
+}

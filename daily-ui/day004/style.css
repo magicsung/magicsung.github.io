@@ -1,0 +1,90 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+body {
+  height: 100%;
+  width: 100%;
+  background: #c0c0c0; /* Old browsers */
+  background: -moz-linear-gradient(45deg,  #c0c0c0 0%, #e6e6e6 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(45deg,  #c0c0c0 0%,#e6e6e6 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(45deg,  #c0c0c0 0%,#e6e6e6 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c0c0c0', endColorstr='#e6e6e6',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+.mt-10 { margin-top: 10px; }
+.mt-50 { margin-top: 50px; }
+.pull-right { float: right; }
+.pull-left { float: left; }
+.color-white { color: #fff; }
+.color-gray { color: #999; }
+.fz-1p5em { font-size: 1.5em; }
+.fz-p9em { font-size: .9em; }
+.w33 { width: 33.33%; }
+.w40 { width: 40%; }
+.w50 { width: 50%; }
+.w60 { width: 60%; }
+.w100 { width: 100%; }
+.table { display: table; }
+
+.credit-card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+	box-shadow: 0 15px 30px 5px #666;
+  width: 850px;
+  height: 520px;
+  border-radius: 25px;
+  overflow: hidden;
+}
+.credit-card .card-content {
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+.credit-card .head {
+  background-color: #018ffd;
+  height: 170px;
+  padding: 60px 50px;
+  clear: both;
+}
+.credit-card .body {
+  background-color: #fff;
+  height: calc(100% - 170px);
+  padding: 45px;
+  width: 100%;
+}
+.credit-card .body {
+  width: 100%;
+}
+.input-group {
+  position: relative;
+  display: table-cell;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.form-control {
+  position: relative;
+  display: block;
+  height: 60px;
+  border-radius: 5px;
+  border: 2px solid #ccc;
+  width: 100%;
+  outline-width: 0;
+  font-size: 1.5em;
+  padding: 10px 20px;
+  -webkit-appearance:none
+}
+select.form-control::after {
+  position: absolute;
+  z-index: 100;
+  content: "XXX";
+  font-size: 2em;
+  right: 10px;
+  top: 10px;
+}
+.form-control:focus {
+  border: 2px solid #81c8ff;
+}
