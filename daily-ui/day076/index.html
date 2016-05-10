@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Loading...</title>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/css/lib/normalize.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="./style.css" media="screen" title="no title" charset="utf-8">
+  </head>
+  <body>
+
+    <div class="loading">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
+        <circle class="dot main-dot" cx="250" cy="250" r="15">
+          <animate id="grow" attributeName="stroke-width" values="1;3;2;5;4;7;6;9;8;11;10;13;12;15;14;17;16" begin=".2s; fail.end+1s" dur="1.6s" repeatCount="1" fill="freeze" />
+          <animate id="fail" attributeName="stroke-width" values="14;12;10;8;6;4;2;0" begin="in8.end+0.3s" dur="0.8s" repeatCount="1" fill="freeze" />
+        </circle>
+        <circle class="dot dot1" cx="250" cy="170" r="10">
+          <animate id="in1" attributeName="cy" values="170;180;190;250" begin="0s; out8.end+1s" dur=".2s" repeatCount="1" fill="freeze" />
+          <animate id="out1" attributeName="cy" from="250" to="170" begin="in8.end+0.3s" dur=".1s" repeatCount="1" fill="freeze" />
+        </circle>
+        <circle class="dot dot2" cx="310" cy="190" r="10">
+          <animate id="in2" attributeName="cx" values="310;300;290;250" begin="in1.end" dur=".2s" repeatCount="1" fill="freeze" />
+          <animate id="" attributeName="cy" values="190;200;210;250" begin="in1.end" dur=".2s" repeatCount="1" fill="freeze" />
+          <animate id="out2" attributeName="cx" from="250" to="310" begin="out1.end" dur=".1s" repeatCount="1" fill="freeze" />
+          <animate id="" attributeName="cy" from="250" to="190" begin="out1.end" dur=".1s" repeatCount="1" fill="freeze" />
+        </circle>
+        <circle class="dot dot3" cx="330" cy="250" r="10">
+          <animate id="in3" attributeName="cx" values="330;320;310;250" begin="in2.end" dur=".2s" repeatCount="1" fill="freeze" />
+          <animate id="out3" attributeName="cx" from="250" to="330" begin="out2.end" dur=".1s" repeatCount="1" fill="freeze" />
+        </circle>
+        <circle class="dot dot4" cx="310" cy="310" r="10">
+          <animate id="in4" attributeName="cx" values="310;300;290;250" begin="in3.end" dur=".2s" repeatCount="1" fill="freeze" />
+          <animate id="" attributeName="cy" values="310;300;290;250" begin="in3.end" dur=".2s" repeatCount="1" fill="freeze" />
+          <animate id="out4" attributeName="cx" from="250" to="310" begin="out3.end" dur=".1s" repeatCount="1" fill="freeze" />
+          <animate id="" attributeName="cy" from="250" to="310" begin="out3.end" dur=".1s" repeatCount="1" fill="freeze" />
+        </circle>
+        <circle class="dot dot5" cx="250" cy="330" r="10">
+          <animate id="in5" attributeName="cy" values="330;310;300;250" begin="in4.end" dur=".2s" repeatCount="1" fill="freeze" />
+          <animate id="out5" attributeName="cy" from="250" to="330" begin="out4.end" dur=".1s" repeatCount="1" fill="freeze" />
+        </circle>
+        <circle class="dot dot6" cx="190" cy="310" r="10">
+          <animate id="in6" attributeName="cx" values="190;200;210;250" begin="in5.end" dur=".2s" repeatCount="1" fill="freeze" />
+          <animate id="" attributeName="cy" values="310;300;290;250" begin="in5.end" dur=".2s" repeatCount="1" fill="freeze" />
+          <animate id="out6" attributeName="cx" from="250" to="190" begin="out5.end" dur=".1s" repeatCount="1" fill="freeze" />
+          <animate id="" attributeName="cy" from="250" to="310" begin="out5.end" dur=".1s" repeatCount="1" fill="freeze" />
+        </circle>
+        <circle class="dot dot7" cx="170" cy="250" r="10">
+          <animate id="in7" attributeName="cx" values="170;180;190;250" begin="in6.end" dur=".2s" repeatCount="1" fill="freeze" />
+          <animate id="out7" attributeName="cx" from="250" to="170" begin="out6.end" dur=".1s" repeatCount="1" fill="freeze" />
+        </circle>
+        <circle class="dot dot8" cx="190" cy="190" r="10">
+          <animate id="in8" attributeName="cx" values="190;200;210;250" begin="in7.end" dur=".2s" repeatCount="1" fill="freeze" />
+          <animate id="" attributeName="cy" values="190;200;210;250" begin="in7.end" dur=".2s" repeatCount="1" fill="freeze" />
+          <animate id="out8" attributeName="cx" from="250" to="190" begin="out7.end" dur=".1s" repeatCount="1" fill="freeze" />
+          <animate id="" attributeName="cy" from="250" to="190" begin="out7.end" dur=".1s" repeatCount="1" fill="freeze" />
+        </circle>
+      </svg>
+    </div>
+
+  </body>
+</html>
