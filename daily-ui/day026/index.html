@@ -1,0 +1,49 @@
+  <!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Day026 - Newsletter Subscription Popup</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" >
+    <link rel="stylesheet" href="/css/lib/normalize.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="./style.css" media="screen" title="no title" charset="utf-8">
+  </head>
+  <body>
+    <div class="wrap text-center">
+      <div class="clearfix">
+        <a href="#" class="close pull-right">
+          <i class="material-icons gradient1 fz-2em">&#xE14C;</i>
+        </a>
+      </div>
+      <div class="brand mt-60">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 180" id="brand-image">
+          <defs>
+            <pattern id="img1" patternUnits="userSpaceOnUse" width="138" height="134">
+              <image xlink:href="./image.jpg" x="0" y="0" width="138" height="134" />
+            </pattern>
+            <style>
+              .a{fill:#fff;}
+              .b{
+                fill: url(#img1);
+              }
+            </style>
+          </defs>
+          <title>ikea-logo</title>
+          <path class="b" d="M0,180V0H500V180H0Zm242.94-7.46c49.31-.08,91.1-3.31,132.38-11.66,28.62-5.79,56.67-13.51,82.59-27.45,10.77-5.79,20.82-12.62,28.41-22.46,10.18-13.18,10.51-27.24.29-40.38a78.54,78.54,0,0,0-13.9-13.51c-13-10.1-28-16.62-43.41-22.18-37.86-13.66-77.21-20.29-117.11-23.73C255,6.24,198,7.63,141.34,17.07,109.57,22.36,78.4,29.92,49.16,43.94,36,50.24,23.6,57.69,14.26,69.25,3.16,83,2.81,98.18,14.33,111.54a96.69,96.69,0,0,0,19.54,16.88c16.76,11.18,35.6,18,54.83,23.59C141.43,167.37,195.52,172.2,242.94,172.54Z"/>
+          <path class="a" d="M242.94,172.54C195.52,172.2,141.43,167.37,88.7,152c-19.23-5.6-38.07-12.41-54.83-23.59a96.69,96.69,0,0,1-19.54-16.88C2.81,98.18,3.16,83,14.26,69.25c9.33-11.56,21.75-19,34.9-25.31,29.24-14,60.41-21.58,92.18-26.87C198,7.63,255,6.24,312.18,11.18c39.9,3.44,79.25,10.07,117.11,23.73,15.4,5.55,30.39,12.07,43.41,22.18a78.54,78.54,0,0,1,13.9,13.51c10.22,13.14,9.89,27.19-.29,40.38-7.59,9.84-17.64,16.66-28.41,22.46-25.92,13.94-54,21.67-82.59,27.45C334,169.23,292.24,172.46,242.94,172.54ZM196,53.63c-3.7,8.93-10.33,15-16.36,21.81V54.12H139.09v63.35h40.63V95l1-.38,13.89,22.91h47.5c-2.91-4.6-5.66-8.91-8.38-13.24s-5.44-8.77-8.19-13.14c-7-11.24-7-11.23.5-22,3.47-4.94,6.89-9.9,10.8-15.53H196Zm222.13-.28H363.79l-23.68,64.24h34.43c2.76-11.61,2.76-11.53,19.39-11.42,8.43,0.06,5.16,7.75,8.3,11.59h43.17Zm-90.62.12H254.19v64.44H327.7V98.8H293.9l0.29-5.37h26V77H293.85l0.52-4.86h33.14V53.47ZM73.44,117.81h41V54.16h-41v63.66Z"/>
+          <path class="b" d="M196,53.63h40.82c-3.91,5.62-7.33,10.59-10.8,15.53-7.54,10.73-7.55,10.72-.5,22,2.74,4.37,5.44,8.77,8.19,13.14s5.47,8.64,8.38,13.24h-47.5L180.7,94.58l-1,.38v22.51H139.09V54.12h40.54V75.43C185.66,68.66,192.3,62.55,196,53.63Z"/>
+          <path class="b" d="M418.13,53.35l27.28,64.41H402.24c-3.14-3.84.13-11.53-8.3-11.59-16.63-.12-16.63-0.2-19.39,11.42H340.12l23.68-64.24h54.33Zm-25,38.5-4.8-10.94-4.66,10.94h9.45Z"/>
+          <path class="b" d="M327.51,53.47V72.16H294.37L293.85,77H320.2V93.43h-26L293.9,98.8H327.7v19.1H254.19V53.47h73.32Z"/>
+          <path class="b" d="M73.44,117.81V54.16h41v63.66h-41Z"/>
+          <path class="a" d="M393.1,91.84h-9.45l4.66-10.94Z"/>
+        </svg>
+      </div>
+      <h1 class="gradient1 mt-40">Subscribe to our newsletter</h1>
+      <p class="gradient1" style="font-size: 1.2em;">and stay updated on the latest <br>products and special offers!</p>
+      <div class="mt-40">
+        <input type="text" class="form-control" placeholder="Email Address">
+      </div>
+      <button class="btn mt-40">SUBMIT</button>
+    </div>
+  </body>
+</html>
