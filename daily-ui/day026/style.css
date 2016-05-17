@@ -34,7 +34,7 @@ body {
 .brand svg {
   width: 150px; }
 .gradient1 {
-  color: red;
+  color: #777;
   -webkit-text-fill-color: transparent;
   background: -webkit-linear-gradient(transparent, transparent), url(./image.jpg) no-repeat;
   background: -o-linear-gradient(transparent, transparent);
@@ -57,5 +57,6 @@ body {
   border: 0;
   color: #fff;
   background: -webkit-linear-gradient(transparent, transparent), url(./image.jpg) no-repeat;
+  background: -moz-linear-gradient(transparent, transparent), url(./image.jpg) no-repeat;
   font-weight: 700;
   font-weight: 1.1em; }
