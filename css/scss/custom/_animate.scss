@@ -26,6 +26,6 @@
   @include animation-name(slideOutLeft);
 }
 .animated {
-  @include animation-duration(.6s);
+  @include animation-duration(.3s);
   @include animation-fill-mode(both);
 }

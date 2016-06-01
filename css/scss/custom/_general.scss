@@ -6,9 +6,9 @@ html, body {
   color: $gray;
 }
 html.noscroll {
-    position: fixed;
-    overflow-y: scroll;
-    width: 100%;
+  position: fixed;
+  overflow-y: scroll;
+  width: 100%;
 }
 #main-content {
   min-height: 100%;
@@ -30,13 +30,19 @@ a:focus {
   padding-bottom: 6px;
   font-weight: normal;
 }
-.border {
-  border: 1px solid $gray-lighter;
-  @include border-radius(1px);
-}
-.border-bottom-gray {
-  border-bottom: 1px solid $gray-lighter;
-}
+
+.border { border: 1px solid $gray-lighter; }
+.border-right-gray-1px { border-right: 1px solid $gray-lighter; }
+.border-left-gray-1px { border-left: 1px solid $gray-lighter; }
+.border-left-black-1px { border-left: 1px solid $black; }
+.border-top-gray-1px { border-top: 1px solid $gray-lighter; }
+.border-bottom-gray-1px { border-bottom: 1px solid $gray-lighter; }
+.border-bottom-gray-2px { border-bottom: 2px solid $gray-lighter; }
+.border-none { border: none; }
+@include bp(xs) {
+  .xs-border-none { border: none; }
+};
+
 .title-with-gray-bg {
   font-size: 1.1em;
   font-weight: 600;
@@ -45,13 +51,10 @@ a:focus {
   padding: 10px;
   margin: 0;
 }
-.fix-icon {
-  position: relative;
-  top: 6px;
-}
-.fix-icon-3px {
-  position: relative;
-  top: 3px;
+
+.video-large iframe{
+  width: 100%;
+  height: 100%;
 }
 
 .social {
@@ -74,23 +77,9 @@ a:focus {
   }
 }
 
-.form-control {
-  min-height: 40px !important;
-}
-.radius-20 {
-  @include border-radius(20px);
-}
-.radius-5 {
-  @include border-radius(5px);
-}
-.xs-radius-0 {
-  @include bp(xs) {
-    @include border-radius(0);
-  };
-}
-.radius-right-5 {
-  @include border-right-radius(5px);
-}
+.square-120 { height: 120px;width: 120px; }
+.square-80 { height: 80px;width: 80px; }
+.square-60 { height: 60px;width: 60px; }
 
 .browser-message {
   display: none;
@@ -119,36 +108,4 @@ a:focus {
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
-}
-
-.show-video {
-  iframe {
-    // display: none;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    padding: 0 5px 0 5px;
-  }
-}
-
-.category .active {
-  @extend .hover-red:hover;
-}
-
-.left-arrow:before {
-  content: "";
-  position: absolute;
-  left: -15px;
-  top: 0;
-	border-top: 15px solid transparent;
-	border-right: 15px solid $gray-lighter;
-	border-bottom: 15px solid transparent;
-}
-
-.new-badge {
-  position: absolute;
-  right: -15px;
-  top: -3px;
 }

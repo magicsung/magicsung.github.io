@@ -82,10 +82,20 @@ ul.gray-item li a {
     color: $gray-light;
   }
 }
-
+.link-white {
+  a {
+    color: $white;
+    &:hover {
+      color: $gray-lighter;
+    }
+  }
+}
 .hover-red:hover {
   border-color: $brand-primary;
   color: $brand-primary;
+}
+.hover-gray-light:hover {
+  border-color: $gray-lighter;
 }
 
 .link-red {
@@ -135,8 +145,16 @@ ul.gray-item li a {
   color: $gray;
   border: 1px solid $gray-lighter;
   &:hover {
-    background-color: $white;
+    background-color: $bg-light;
     color: $gray;
+  }
+}
+.btn-blue-light {
+  background-color: $blue-light;
+  color: $white;
+  &:hover {
+    background-color: $blue-lighter;
+    color: $white;
   }
 }
 
@@ -176,55 +194,6 @@ ul.gray-item li a {
   background-color: $opacity;
 }
 
-
-// switch button
-
-.onoffswitch {
-    position: relative; width: 90px;
-    -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
-}
-.onoffswitch-checkbox {
-    display: none;
-}
-.onoffswitch-label {
-    display: block; overflow: hidden; cursor: pointer;
-    border: 1px solid $gray-light; border-radius: 20px;
-}
-.onoffswitch-inner {
-    display: block; width: 200%; margin-left: -100%;
-    @include transition(margin 0.3s ease-in 0s);
-}
-.onoffswitch-inner:before, .onoffswitch-inner:after {
-    display: block; float: left; width: 50%; height: 30px; padding: 0; line-height: 30px;
-    font-size: 14px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
-    box-sizing: border-box;
-}
-.onoffswitch-inner:before {
-    content: "ON";
-    padding-left: 10px;
-    background-color: $green; color: $white;
-}
-.onoffswitch-inner:after {
-    content: "OFF";
-    padding-right: 10px;
-    background-color: $gray-lighter; color: $gray;
-    text-align: right;
-}
-.onoffswitch-switch {
-    display: block; width: 18px; margin: 6px;
-    background: $white;
-    position: absolute; top: 0; bottom: 0;
-    right: 56px;
-    border: 1px solid $gray-light; border-radius: 20px;
-    @include transition(all 0.3s ease-in 0s);
-}
-.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
-    margin-left: 0;
-}
-.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
-    right: 0px;
-}
-
 .inner-btn {
   position: absolute;
   top: 0;
@@ -232,4 +201,48 @@ ul.gray-item li a {
   height: 40px;
   background-color: rgba(0,0,0,0);
   border: 0;
+}
+
+
+// social button
+.btn-fb {
+  background-color: $fb-blue;
+  color: $white;
+  &:hover {
+    background-color: $fb-blue-light;
+    color: $white;
+  }
+}
+.btn-weibo {
+  background-color: $weibo-red;
+  color: $white;
+  &:hover {
+    background-color: $weibo-red-light;
+    color: $white;
+  }
+}
+.btn-google {
+  background-color: $white;
+  color: $google-red;
+  border: 1px solid $google-red;
+  &:hover {
+    background-color: $white;
+    color: $google-red-light;
+  }
+}
+.btn-wechat {
+  background-color: $wechat-green;
+  color: $white;
+  &:hover {
+    background-color: $wechat-green-light;
+    color: $white;
+  }
+}
+.btn-qq {
+  background-color: $qq-blue;
+  color: $white;
+  &:hover {
+    background-color: $qq-blue-light;
+    color: $white;
+  }
 }

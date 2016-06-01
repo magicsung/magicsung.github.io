@@ -1,0 +1,130 @@
+
+// switch button
+
+.onoffswitch {
+    position: relative;
+    width: 110px;
+    @include bp(xs) { width: 90px; }
+    -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+}
+.onoffswitch-checkbox {
+    display: none;
+}
+.onoffswitch-label {
+    display: block; overflow: hidden; cursor: pointer;
+    border: 1px solid $gray-lighter; border-radius: 20px;
+}
+.onoffswitch-inner {
+    display: block; width: 200%; margin-left: -100%;
+    @include transition(margin 0.3s ease-in 0s);
+}
+.onoffswitch-inner:before, .onoffswitch-inner:after {
+    display: block; float: left; width: 50%; height: 30px; padding: 0; line-height: 30px;
+    font-size: 14px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
+    box-sizing: border-box;
+}
+.onoffswitch-inner:before {
+    content: "ON";
+    padding-left: 10px;
+    background-color: $brand-primary; color: $white;
+    @include bp(xs) { font-size: 10px; };
+}
+.onoffswitch-inner:after {
+    content: "OFF";
+    padding-right: 10px;
+    background-color: $gray-lighter; color: $white;
+    text-align: right;
+    @include bp(xs) { font-size: 10px; };
+}
+.onoffswitch-switch {
+    display: block;
+    width: 32px;
+    margin: 0;
+    background: $white;
+    position: absolute; top: 0; bottom: 0;
+    right: 78px;
+    @include bp(xs) { right: 58px; }
+    border: 1px solid $gray-light; border-radius: 20px;
+    @include transition(all 0.3s ease-in 0s);
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+    margin-left: 0;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+    right: 0px;
+}
+
+
+.onoffswitch-switch::after {
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: inherit;
+  font-size: 20px;
+  padding-right: 0.5em;
+  position: absolute;
+  top: 2px;
+}
+
+.onoffswitch.facebook {
+  .onoffswitch-inner:before,
+  .onoffswitch-inner:after {
+    content: "Fackbook";
+  }
+  .onoffswitch-inner:before {
+    background-color: $fb-blue;
+  }
+  .onoffswitch-switch::after {
+    content: "\f09a";
+    left: 8px;
+  }
+  .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch::after {
+    color: $fb-blue;
+  }
+}
+.onoffswitch.google {
+  .onoffswitch-inner:before,
+  .onoffswitch-inner:after {
+    content: "Google";
+  }
+  .onoffswitch-inner:before {
+    background-color: $google-red;
+  }
+  .onoffswitch-switch::after {
+    content: "\f0d5";
+    left: 3px;
+  }
+  .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch::after {
+    color: $google-red;
+  }
+}
+.onoffswitch.weibo {
+  .onoffswitch-inner:before,
+  .onoffswitch-inner:after {
+    content: "微博";
+  }
+  .onoffswitch-inner:before {
+    background-color: $weibo-red;
+  }
+  .onoffswitch-switch::after {
+    content: "\f18a";
+    left: 5px;
+  }
+  .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch::after {
+    color: $weibo-red;
+  }
+}
+
+.onoffswitch.switch-small {
+  height: 18px !important;
+  width: 32px;
+  .onoffswitch-inner:before, .onoffswitch-inner:after {
+    content: "";
+    height: 16px;
+    line-height: 18px;
+  }
+  .onoffswitch-switch {
+    right: 15px;
+    width: 18px;
+  }
+}

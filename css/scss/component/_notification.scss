@@ -1,0 +1,15 @@
+
+#notification {
+  height: 400px;
+  line-height: 1.4em;
+  padding: 0;
+  a {
+    white-space: normal !important;
+  }
+  li.unread {
+    background-color: $bg-light;
+  }
+  li {
+    padding: 0 10px;
+  }
+}

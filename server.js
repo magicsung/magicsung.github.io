@@ -6,7 +6,7 @@ livereload = require('livereload');
 app.use('/', express.static(__dirname + '/'));
 app.use('/css', express.static(__dirname + '/css'));
 app.use('/js', express.static(__dirname + '/js'));
-app.use('/image', express.static(__dirname + '/images'));
+app.use('/image', express.static(__dirname + '/image'));
 app.use('/daily-ui', express.static(__dirname + '/daily-ui'));
 
 http.listen(8080, "0.0.0.0", function(){
@@ -15,4 +15,4 @@ http.listen(8080, "0.0.0.0", function(){
 
 server = livereload.createServer();
 
-server.watch([__dirname + "/views", __dirname + "/js", __dirname + "/css", __dirname + "/daily-ui"]);
+server.watch([__dirname + "/", __dirname + "/views", __dirname + "/js", __dirname + "/css", __dirname + "/daily-ui"]);

@@ -1,0 +1,99 @@
+header {
+  margin-top: 0;
+  @include bp(sm) {
+    padding: 10px 0 10px 0;
+  };
+  @include bp(xs) {
+    padding: 0;
+    background-color: $brand-primary;
+    height: $header-height;
+    .brand-logo img {
+      margin-top: 5px;
+      height: 30px;
+    }
+  };
+}
+
+.xs-fixed-header {
+  @include bp(xs) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    width: 100%;
+  };
+}
+
+#sidebar {
+  @include animation-name(slideInLeft);
+  @include bp(xs) {
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+    top: $header-height;
+    left: 0;
+    height: 100%;
+    overflow-y: scroll;
+  };
+}
+.header-height {
+  @include bp(xs) {
+    margin-top: $header-height;
+  }
+}
+
+@include bp(xs) {
+  .sidebar-wrap {
+    padding: 0;
+    .avatar {
+      padding: 10px 20px 10px 20px;
+    }
+  }
+  .personal-function, .category {
+    margin-top: 0;
+  }
+  .xs-list {
+    margin: 0;
+    padding: 0;
+    li {
+      height: 45px;
+      margin: 0;
+      padding: 0;
+      text-align: left;
+      border-bottom: 1px solid $gray-lighter;
+      display: block;
+      &:first-child {
+        border-top: 1px solid $gray-lighter;
+      }
+      &:last-child {
+        border-bottom: none;
+      }
+      > a {
+        margin: 0;
+        padding: 10px 20px 10px 20px;
+        border: none;
+        font-size: 1.2em;
+        color: $gray;
+        min-height: 40px !important;
+        display: block;
+        width: 100%;
+        @include border-radius(0);
+      }
+      > a:active, a:focus {
+        box-shadow: none;
+      }
+    }
+  }
+}
+
+input#toggle-menu:checked ~ div #sidebar {
+  @include bp(xs) {
+    @include animation-name(slideOutLeft);
+  };
+}
+#xs-menu-action {
+  background-color: $brand-primary-darker;
+}
+input#toggle-menu:checked ~ header #xs-menu-action {
+  background-color: inherit;
+}

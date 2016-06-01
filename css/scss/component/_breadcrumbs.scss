@@ -1,0 +1,23 @@
+.breadcrumbs {
+  padding-left: 0;
+  margin-top: 20px;
+  > li+li:before {
+    padding: 5px 5px;
+    color: $gray-light;
+    font-family: 'Material Icons';
+    content: "\E5CC";
+    -webkit-font-feature-settings: 'liga';
+    font-feature-settings: 'liga';
+    vertical-align: middle;
+  }
+  > li {
+    display: inline-block;
+    color: $gray;
+    > a {
+      color: $gray;
+      &:hover {
+        color: $gray-light;
+      }
+    }
+  }
+}

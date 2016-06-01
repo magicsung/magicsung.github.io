@@ -11,8 +11,20 @@ $green:                  #7ed321;
 $green-light:            lighten($green, 10%);
 $yellow:                 #f1af4d;
 $yellow-light:           lighten($yellow, 10%);
+$blue-light:             #7ec3e2;
+$blue-lighter:           lighten($blue-light, 10%);
+
+// social media
 $fb-blue:                #3c5896;
 $fb-blue-light:          lighten($fb-blue, 10%);
+$weibo-red:              #d62b27;
+$weibo-red-light:        lighten($weibo-red, 10%);
+$google-red:             #f14231;
+$google-red-light:       lighten($google-red, 10%);
+$wechat-green:           #34C100;
+$wechat-green-light:     lighten($wechat-green, 10%);
+$qq-blue:                #2A98F0;
+$qq-blue-light:          lighten($qq-blue, 10%);
 
 $gray:                   #757575 !default;
 $gray-light:             #9b9da0 !default;

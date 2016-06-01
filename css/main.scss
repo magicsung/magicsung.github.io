@@ -3,7 +3,7 @@
 @import "scss/basic/variables";
 @import "scss/basic/mixins";
 @import "scss/basic/scaffolding";
-
+@import "scss/custom/animate";
 
 // bootstrap
 @import "scss/bootstrap/grid";
@@ -18,11 +18,18 @@
 
 // component
 @import "scss/component/button";
+@import "scss/component/switch";
+@import "scss/component/breadcrumbs";
+@import "scss/component/avatar";
+@import "scss/component/popover";
+@import "scss/component/popout";
+@import "scss/component/progress";
+@import "scss/component/notification";
 
 // custom
-@import "scss/custom/animate";
 @import "scss/custom/type";
 @import "scss/custom/general";
 
-
 // layout
+@import "scss/layout/header";
+@import "scss/layout/landing";
