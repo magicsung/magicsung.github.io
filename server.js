@@ -8,6 +8,7 @@ app.use('/css', express.static(__dirname + '/css'));
 app.use('/js', express.static(__dirname + '/js'));
 app.use('/image', express.static(__dirname + '/image'));
 app.use('/daily-ui', express.static(__dirname + '/daily-ui'));
+app.use('/practice', express.static(__dirname + '/practice'));
 
 http.listen(8080, "0.0.0.0", function(){
   console.log('listening on *:8080');
