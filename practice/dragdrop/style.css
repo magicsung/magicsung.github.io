@@ -1,0 +1,46 @@
+.area {
+  border: 1px dashed #ccc;
+  text-align: center;
+  min-height: 500px;
+  padding-top: 15px;
+}
+
+.component {
+  min-height: 50px;
+  border: 1px solid #666;
+  margin-bottom: 15px;
+  vertical-align: middle;
+  cursor: move;
+  overflow: hidden;
+}
+
+.component-input {
+  width:100%;
+  min-height:50px;
+  border: none;
+  text-align: center;
+}
+
+.component-header > .component-input {
+  font-size: 30px;
+  font-weight: bold;
+  color: #757575;
+  display: block;
+  -webkit-margin-before: 0.83em;
+  -webkit-margin-after: 0.83em;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+  font-weight: bold;
+}
+.component-description > .component-input {
+  color: #757575;
+  display: block;
+  -webkit-margin-before: 1em;
+  -webkit-margin-after: 1em;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+}
+
+img {
+  max-width: 100%;
+}
