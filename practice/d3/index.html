@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Data Visualization</title>
+  <meta name="viewport" content="initial-scale=1.0001, minimum-scale=1.0001, maximum-scale=1.0001, user-scalable=no">
+  <link href="nv.d3.min.css" rel="stylesheet">
+  <style>
+    * { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>行業占GDP比重 1981~2015 <span style="font-size:.4em;font-weight:300;margin-left:15px;">資料來源：http://data.gov.tw/node/6690</span></h1>
+  </div>
+  <div id="data"></div>
+  <div id="json"></div>
+
+  <script src="https://d3js.org/d3.v3.js"></script>
+  <script src="nv.d3.min.js"></script>
+  <script type="text/javascript">
+    var vis = d3.select("#data")
+                .append('svg')
+                .attr('id', 'viz')
+                .attr('height', 600)
+                .attr('width', 1200);
+
+    plot();
+
+    function getData() {
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
+            var json = convert2json(this);
+            document.getElementById('json').innerHTML = JSON.stringify(json);
+          }
+      };
+      xhttp.open("GET", "http://www.dgbas.gov.tw/public/data/open/Stat/OPEN_B.2.8.xml", true);
+      xhttp.send();
+    }
+
+    function convert2json(xml) {
+      var obj = [];
+      var rowXml = xml.responseXML.getElementsByTagName('Series');
+      Array.prototype.slice.call(rowXml).forEach(function(node){
+        // 取年度資料
+        if( node.getElementsByTagName('SeriesProperty')[0].getAttribute('FREQ') == 'A' && node.getAttribute('ITEM') != 'GDP占GDP比重(%)' ) {
+          var industry = String( node.getAttribute('ITEM') );
+          industry = industry.replace('占GDP比重(%)', '');
+          var gdpList = node.getElementsByTagName('Obs');
+          var industryData = {};
+          var values = [];
+          // 每個行業別跑回圈
+          Array.prototype.slice.call(gdpList).forEach(function(gdp){
+            var year = gdp.getAttribute('TIME_PERIOD');
+            var gpdPercentage = Number.parseFloat( gdp.getAttribute('OBS_VALUE') );
+            values.push([year, gpdPercentage]);
+          });
+          industryData['key'] = industry;
+          industryData['values'] = values;
+          // 將 '行業別', '年份', 'GDP佔比' 寫進 obj
+          obj.push(industryData);
+        }
+      });
+      return obj;
+    }
+
+    function plot() {
+      // d3.json('data.json', function(data) {
+      //   nv.addGraph(function() {
+      //     var chart = nv.models.cumulativeLineChart()
+      //                   .x(function(d) { return d[0] })
+      //                   .y(function(d) { return d[1]/100 }) //adjusting, 100% is 1.00, not 100 as it is in the data
+      //                   .color(d3.scale.category10().range())
+      //                   .useInteractiveGuideline(true)
+      //                   ;
+      //
+      //      chart.xAxis
+      //         .tickFormat(function(d) {
+      //             return d3.time.format('%Y')(new Date(d+'-12-31'))
+      //           });
+      //
+      //     chart.yAxis
+      //         .tickFormat(d3.format(',.1%'));
+      //
+      //     d3.select('#data svg')
+      //         .datum(data)
+      //         .call(chart);
+      //
+      //     //TODO: Figure out a good way to do this automatically
+      //     nv.utils.windowResize(chart.update);
+      //
+      //     return chart;
+      //   });
+      // });
+      d3.json('data.json', function(data) {
+        nv.addGraph(function() {
+          var chart = nv.models.stackedAreaChart()
+                        .margin({right: 100})
+                        .x(function(d) { return d[0] })   //We can modify the data accessor functions...
+                        .y(function(d) { return d[1] })   //...in case your data is formatted differently.
+                        .useInteractiveGuideline(true)    //Tooltips which show all data points. Very nice!
+                        .rightAlignYAxis(true)      //Let's move the y-axis to the right side.
+                        .showControls(true)       //Allow user to choose 'Stacked', 'Stream', 'Expanded' mode.
+                        .clipEdge(true);
+
+          //Format x-axis labels with custom function.
+          chart.xAxis
+              .tickFormat(function(d) {
+                return d3.time.format('%Y')(new Date(d+'-12-31'))
+          });
+
+          chart.yAxis
+              .tickFormat(d3.format(',.2f'));
+
+          d3.select('#data svg')
+            .datum(data)
+            .call(chart);
+
+          nv.utils.windowResize(chart.update);
+
+          return chart;
+        });
+      })
+    }
+
+  </script>
+</body>
+</html>
