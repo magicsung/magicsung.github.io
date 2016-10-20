@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-Hans-TW">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    input::-webkit-input-placeholder {
+      color: #ddd;
+    }
+    #main-bg {
+      content: "";
+      background-image: url("pexels-photo.jpg");
+      background-size: cover;
+      background-position: center top;
+      background-repeat: no-repeat;
+      width: 100%;
+      padding-bottom: 66.67%;
+    }
+    #glass-box::before {
+      content: "";
+      background-image: url("pexels-photo.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center top;
+      background-attachment: fixed;
+      width: calc(100% + 40px);
+      height: calc(100% + 40px);
+      position: absolute;
+      left: 0; top:0;
+      filter: blur(20px);
+      margin: -20px;
+      z-index: 100;
+    }
+    #glass-box {
+      background-position: center top;
+      background-size: cover;
+      position: absolute;
+      height: 100px;
+      width: 60%;
+      top: -100%; left: 0%;
+      margin: 0 auto;
+      border-radius: 10px;
+      background-color: rgba(255,255,255,.8);
+      overflow: hidden;
+    }
+    #input-box {
+      z-index: 150;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0);
+      border: none;
+      color: #fff;
+      font-size: 2em;
+      padding: 20px;
+      text-align: center;
+      outline: none;
+    }
+  </style>
+</head>
+<body>
+  <div id="main-bg">
+  </div>
+  <div id="glass-box">
+    <input id="input-box" type="text" placeholder="最近想要去哪走走？"/>
+  </div>
+  <script>
+    var bgImage = document.getElementById('main-bg');
+    var glassBox = document.getElementById('glass-box');
+    function setSize() {
+      bgImage.style.height = window.innerHeight + 'px';
+      bgImage.style.paddingBottom = '0';
+      glassBox.style.top = window.innerHeight / 2 - 100 + 'px';
+      glassBox.style.left = window.innerWidth / 2 * 0.4 + 'px';
+    }
+    window.onload = setSize();
+    window.onresize = function(event) {
+      setSize()
+    };
+  </script>
+</body>
+</html>
