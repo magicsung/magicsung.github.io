@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>中文字體子集</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+    @font-face {
+      font-family: 'wt071';
+      src: url('font/wt071.eot');
+      src:
+        url('font/wt071.eot?#font-spider') format('embedded-opentype'),
+        url('font/wt071.woff2') format('woff2'),
+        url('font/wt071.woff') format('woff'),
+        url('font/wt071.ttf') format('truetype'),
+        url('font/wt071.svg') format('svg');
+      font-weight: normal;
+      font-style: normal;
+    }
+    #content {
+      background-image: url('bg.jpg');
+      background-position: center;
+      background-size: cover;
+      width: 100%;
+      height: 100%;
+      opacity: .6;
+    }
+    #font {
+      position: absolute;
+      top: 10%;
+      right: 50%;
+      transform: translateX(50%);
+      font-size: 2em;
+      text-align: left;
+      margin: 0 auto;
+      font-family: 'wt071';
+      -webkit-writing-mode: vertical-rl;
+      writing-mode: vertical-rl;
+    }
+    @media screen and (max-width: 768px) {
+      #font {
+        font-size: 1.5em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="content"></div>
+  <h1 id="font">
+    <span style="font-size:1.2em; margin-top: 1.5em;">念奴嬌</span>
+    <span style="margin-top: 1em;">蘇軾</span><br>
+    大江東去 浪淘盡，千古風流人物。<br>
+    故壘西邊，人道是，三國周郎赤壁。<br>
+    亂石崩雲，驚濤裂岸，捲起千堆雪。<br>
+    江山如畫，一時多少豪傑。<br>
+    遙想公瑾當年，小喬出嫁了，雄姿英發。<br>
+    羽扇綸巾，談笑間，強虜飛灰湮滅。<br>
+    故國神遊，多情應笑我，早生華髮。<br>
+    人間如夢，一尊還酹江月。<br>
+  </h1>
+  <script>
+  var bgImage = document.getElementById('content');
+  function setSize() {
+    bgImage.style.height = window.innerHeight + 'px';
+  }
+  window.onload = setSize();
+  window.onresize = function(event) {
+    setSize()
+  };
+  </script>
+</body>
+</html>
