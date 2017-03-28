@@ -1,0 +1,89 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    background: #000;
+}
+
+.center-block {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: #000;
+    width: 400px;
+    height: 400px;
+    padding: 20px;
+    border-radius: 3px;
+}
+
+@keyframes fill-circle {
+    0% {
+        stroke-dashoffset: -300;
+        stroke-dasharray: 0, 1200;
+    }
+    100% {
+        stroke-dashoffset: -600;
+        stroke-dasharray: 1200, 0;
+    }
+}
+
+@keyframes fill-circle-outer {
+    0% {
+        stroke-dasharray: 0, 0, 80, 1050;
+    }
+    100% {
+        stroke-dasharray: 0, 1050, 0, 1050;
+    }
+}
+
+@keyframes fill-check {
+    0% {
+        stroke-dasharray: 0, 297;
+    }
+    100% {
+        stroke-dasharray: 297, 0;
+    }
+}
+@keyframes fill-check-bullet {
+    0% {
+        stroke-dasharray: 0, 0, 20, 282;
+    }
+    100% {
+        stroke-dasharray: 0, 282, 10, 282;
+    }
+}
+
+#circle-path, #circle-path-outer, #check, #check-bullet {
+    stroke-linecap: "round";
+    stroke-linejoin: "round";
+    stroke-width: 4;
+    stroke: #FCB622;
+    fill: none;
+}
+
+#circle-path {
+    stroke-dashoffset: -300;
+}
+
+#circle-path-outer {
+    stroke-dashoffset: 175;
+    stroke-width: 2;
+    stroke-dasharray: 0, 1050, 0, 1050;
+}
+#check-bullet {
+    stroke-dasharray: 0, 282, 0, 282;
+    animation-delay: .2s;
+}
+
+#circle-path.animate {
+    animation: fill-circle .6s ease;
+}
+#circle-path-outer.animate {
+    animation: fill-circle-outer .6s ease;
+}
+#check.animate {
+    animation: fill-check .6s ease;
+}
+#check-bullet.animate {
+    animation: fill-check-bullet .4s ease-out;
+}

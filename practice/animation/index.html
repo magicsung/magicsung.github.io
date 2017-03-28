@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>animation</title>
+	<link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+	<div class="center-block" id="animation">
+		<svg width="400" height="400">
+			<circle id="circle-path-outer" class="play animate" cx="200" cy="200" r="195"/>
+  			<circle id="circle-path" class="play animate" cx="200" cy="200" r="185"/>
+			<polyline id="check" class="play animate" points="90 210 150 270 300 120"/>
+			<polyline id="check-bullet" class="play animate" points="150 270 350 70"/>
+		</svg>
+	</div>
+
+	<script>
+		document.querySelector('html')
+		.addEventListener('click', function() {
+			document.querySelectorAll('.play').forEach(o => {
+				o.classList.remove('animate');
+			});
+			setTimeout(() => {
+				document.querySelectorAll('.play').forEach(o => {
+					o.classList.add('animate');
+				});
+			}, 30);
+		});
+	</script>
+</body>
+
+</html>
