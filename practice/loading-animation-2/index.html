@@ -19,6 +19,8 @@
 			transform: translate(-50%, -50%);
 		}
     .wrapper {
+      position: relative;
+      overflow: hidden;
       background: #fff;
       width:200px;
 			height: 200px;
@@ -60,11 +62,29 @@
     }
     .wheel-1 {
       top: 0;
-      left: 55px;
+      left: 57px;
     }
     .wheel-2 {
       top: 0;
       left: 91px;
+    }
+    .speed {
+      width: 70px;
+      height: 1px;
+      background: #ddd;
+      position: absolute;
+    }
+    .speed-1 {
+      top: 85px;
+      left: 150px;
+    }
+    .speed-2 {
+      top: 55px;
+      left: 110px;
+    }
+    .speed-3 {
+      top: 35px;
+      left: 190px;
     }
     @keyframes turn {
         0% { transform: rotate3d(0, 0 ,1, 0deg) }
@@ -80,39 +100,60 @@
         50% { transform: translateY(-2px) }
         100% { transform: translateY(0) }
     }
-    .turn-animation {
-      animation: turn .7s;
+    @keyframes speed {
+        0% { transform: translateX(0) }
+        49% {
+          opacity: 1;
+          width: 10px;
+        }
+        50% {
+          transform: translateX(-250px);
+          opacity: 0;
+        }
+        100% {
+          transform: translateX(0);
+          opacity: 0;
+        }
+    }
+    .animate {
       animation-iteration-count: infinite;
       animation-fill-mode: forwards;
       animation-direction: normal;
+    }
+    .turn-animation {
+      animation-name: turn;
+      animation-duration: .3s;
       animation-timing-function: linear;
     }
     .wheel-shock-animation {
       animation-name: shock-1px;
-      animation-duration: .7s;
-      animation-iteration-count: infinite;
-      animation-fill-mode: forwards;
-      animation-direction: normal;
+      animation-duration: .5s;
       animation-timing-function: ease-in;
     }
     .shock-animation {
       animation-name: shock-2px;
-      animation-duration: .7s;
-      animation-iteration-count: infinite;
-      animation-fill-mode: forwards;
-      animation-direction: normal;
+      animation-duration: .5s;
       animation-timing-function: ease-in;
     }
-    .turn-animation { animation-name: turn }
+    .speed-animation {
+      animation-name: speed;
+      animation-timing-function: ease-in-out;
+    }
+    .speed-animation-1 {animation-duration: 1s;}
+    .speed-animation-2 {animation-duration: 1.8s;}
+    .speed-animation-3 {animation-duration: .7s;}
   </style>
 </head>
 <body>
   <div id="center-block">
     <div class="wrapper">
-      <div class="img motorcycle shock-animation"></div>
-      <div class="wheels wheel-shock-animation">
-        <div class="wheel wheel-1 turn-animation"></div>
-        <div class="wheel wheel-2 turn-animation"></div>
+      <div class="animate speed speed-1 speed-animation speed-animation-1"></div>
+      <div class="animate speed speed-2 speed-animation speed-animation-2"></div>
+      <div class="animate speed speed-3 speed-animation speed-animation-3"></div>
+      <div class="animate img motorcycle shock-animation"></div>
+      <div class="animate wheels wheel-shock-animation">
+        <div class="animate wheel wheel-1 turn-animation"></div>
+        <div class="animate wheel wheel-2 turn-animation"></div>
       </div>
     </div>
   </div>
