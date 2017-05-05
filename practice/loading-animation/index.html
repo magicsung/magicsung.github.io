@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="zh-Hans-TW">
+<head>
+  <meta charset="UTF-8">
+  <title>loading...</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+		body {
+			background: #eee;
+		}
+		#center-block {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+    .wrapper {
+      background: #fff;
+      width:200px;
+			height: 200px;
+      border-radius: 25px;
+      box-shadow: 0 3px 10px #ccc;
+    }
+		.img {
+			width: 200px;
+			height: 200px;
+			content: "";
+			display: inline-block;
+			background-position: center center;
+      background-size: 100px 100px;
+      background-repeat: no-repeat;
+		}
+    .img1 { background-image: url("./img/imgMotion1@3x.png") }
+		.img2 { background-image: url("./img/imgMotion2@3x.png") }
+		.img3 { background-image: url("./img/imgMotion3@3x.png") }
+		.img4 { background-image: url("./img/imgMotion4@3x.png") }
+		.img5 { background-image: url("./img/imgMotion5@3x.png") }
+		.img6 { background-image: url("./img/imgMotion6@3x.png") }
+
+    @keyframes flip-1 {
+        0%, 12.8%  {
+            transform: rotate3d(0, 1 ,0, 0deg);
+            background-image: url("./img/imgMotion1@3x.png");
+            opacity: 1;
+        }
+        36% {
+            background-image: url("./img/imgMotion1@3x.png");
+            opacity: 0;
+        }
+        40% {
+            transform: rotate3d(0, 1 ,0, 90deg);
+            background-image: url("./img/imgMotion2@3x.png");
+            opacity: 0;
+        }
+        67.2% {
+            opacity: 1;
+        }
+        80%, 100% {
+            transform: rotate3d(0, 1 ,0, 0deg);
+            background-image: url("./img/imgMotion2@3x.png");
+            opacity: 1;
+        }
+    }
+    @keyframes flip-2 {
+        0%, 12.8%  {
+            transform: rotate3d(0, 1 ,0, 0deg);
+            background-image: url("./img/imgMotion2@3x.png");
+            opacity: 1;
+        }
+        36% {
+            background-image: url("./img/imgMotion2@3x.png");
+            opacity: 0;
+        }
+        40% {
+            transform: rotate3d(0, 1 ,0, 90deg);
+            background-image: url("./img/imgMotion3@3x.png");
+            opacity: 0;
+        }
+        67.2% {
+            opacity: 1;
+        }
+        80%, 100% {
+            transform: rotate3d(0, 1 ,0, 0deg);
+            background-image: url("./img/imgMotion3@3x.png");
+            opacity: 1;
+        }
+    }
+    @keyframes flip-3 {
+        0%, 12.8%  {
+            transform: rotate3d(0, 1 ,0, 0deg);
+            background-image: url("./img/imgMotion3@3x.png");
+            opacity: 1;
+        }
+        36% {
+            background-image: url("./img/imgMotion3@3x.png");
+            opacity: 0;
+        }
+        40% {
+            transform: rotate3d(0, 1 ,0, 90deg);
+            background-image: url("./img/imgMotion4@3x.png");
+            opacity: 0;
+        }
+        67.2% {
+            opacity: 1;
+        }
+        80%, 100% {
+            transform: rotate3d(0, 1 ,0, 0deg);
+            background-image: url("./img/imgMotion4@3x.png");
+            opacity: 1;
+        }
+    }
+    @keyframes flip-4 {
+        0%, 12.8%  {
+            transform: rotate3d(0, 1 ,0, 0deg);
+            background-image: url("./img/imgMotion4@3x.png");
+            opacity: 1;
+        }
+        36% {
+            background-image: url("./img/imgMotion4@3x.png");
+            opacity: 0;
+        }
+        40% {
+            transform: rotate3d(0, 1 ,0, 90deg);
+            background-image: url("./img/imgMotion5@3x.png");
+            opacity: 0;
+        }
+        67.2% {
+            opacity: 1;
+        }
+        80%, 100% {
+            transform: rotate3d(0, 1 ,0, 0deg);
+            background-image: url("./img/imgMotion5@3x.png");
+            opacity: 1;
+        }
+    }
+    @keyframes flip-5 {
+        0%, 12.8%  {
+            transform: rotate3d(0, 1 ,0, 0deg);
+            background-image: url("./img/imgMotion5@3x.png");
+            opacity: 1;
+        }
+        36% {
+            background-image: url("./img/imgMotion5@3x.png");
+            opacity: 0;
+        }
+        40% {
+            transform: rotate3d(0, 1 ,0, 90deg);
+            background-image: url("./img/imgMotion6@3x.png");
+            opacity: 0;
+        }
+        67.2% {
+            opacity: 1;
+        }
+        80%, 100% {
+            transform: rotate3d(0, 1 ,0, 0deg);
+            background-image: url("./img/imgMotion6@3x.png");
+            opacity: 1;
+        }
+    }
+    @keyframes flip-6 {
+        0%, 12.8%  {
+            transform: rotate3d(0, 1 ,0, 0deg);
+            background-image: url("./img/imgMotion6@3x.png");
+            opacity: 1;
+        }
+        36% {
+            background-image: url("./img/imgMotion6@3x.png");
+            opacity: 0;
+        }
+        40% {
+            transform: rotate3d(0, 1 ,0, 90deg);
+            background-image: url("./img/imgMotion1@3x.png");
+            opacity: 0;
+        }
+        67.2% {
+            opacity: 1;
+        }
+        80%, 100% {
+            transform: rotate3d(0, 1 ,0, 0deg);
+            background-image: url("./img/imgMotion1@3x.png");
+            opacity: 1;
+        }
+    }
+    .flip-animation {
+      animation-duration: .6s;
+      animation-delay: 0;
+      animation-iteration-count: 1;
+      animation-fill-mode: forwards;
+      animation-direction: normal;
+      animation-timing-function: linear;
+    }
+    .flip-animation-1 { animation-name: flip-1 }
+    .flip-animation-2 { animation-name: flip-2 }
+    .flip-animation-3 { animation-name: flip-3 }
+    .flip-animation-4 { animation-name: flip-4 }
+    .flip-animation-5 { animation-name: flip-5 }
+    .flip-animation-6 { animation-name: flip-6 }
+  </style>
+</head>
+<body onload="prepare()">
+  <div id="center-block">
+    <div class="wrapper">
+      <div id="animation-image" class="img img1"></div>
+    </div>
+  </div>
+  <script>
+  var index = 1;
+  function prepare() {
+      function switchImage() {
+          var div = document.getElementById("animation-image");
+          div.className = "img flip-animation flip-animation-" + index;
+          index++;
+          if (index === 7) index = 1;
+      }
+      switchImage();
+      setInterval(function() {switchImage()}, 600);
+  }
+  </script>
+</body>
+</html>
