@@ -12,6 +12,25 @@
 		body {
 			background: #eee;
 		}
+    .button {
+      top: 10px;
+      position: relative;
+      display: inline-block;
+      background: #fff;
+      border: 0;
+      margin: 0;
+      border-radius: 15px;
+      width: 100%;
+      line-height: 25px;
+      box-shadow: 0 3px 5px #ccc;
+      outline: 0;
+    }
+    .button:hover {
+      box-shadow: 0 5px 5px #ccc;
+    }
+    .button:active {
+      box-shadow: 0 1px 10px #ccc;
+    }
 		#center-block {
 			position: absolute;
 			top: 50%;
@@ -122,26 +141,33 @@
     }
     .turn-animation {
       animation-name: turn;
-      animation-duration: .3s;
+      animation-duration: .7s;
       animation-timing-function: linear;
     }
     .wheel-shock-animation {
       animation-name: shock-1px;
-      animation-duration: .5s;
+      animation-duration: .7s;
       animation-timing-function: ease-in;
     }
     .shock-animation {
       animation-name: shock-2px;
-      animation-duration: .5s;
+      animation-duration: .7s;
       animation-timing-function: ease-in;
     }
+    .turn-animation.faster {animation-duration: .2s;}
+    .wheel-shock-animation.faster {animation-duration: .4s;}
+    .shock-animation.faster {animation-duration: .4s;}
     .speed-animation {
       animation-name: speed;
       animation-timing-function: ease-in-out;
     }
-    .speed-animation-1 {animation-duration: 1s;}
-    .speed-animation-2 {animation-duration: 1.8s;}
-    .speed-animation-3 {animation-duration: .7s;}
+    .speed-animation-1 {animation-duration: 2s;}
+    .speed-animation-2 {animation-duration: 4s;}
+    .speed-animation-3 {animation-duration: 2.4s;}
+
+    .speed-animation-1.faster {animation-duration: .8s;}
+    .speed-animation-2.faster {animation-duration: 1.6s;}
+    .speed-animation-3.faster {animation-duration: .5s;}
   </style>
 </head>
 <body>
@@ -156,8 +182,30 @@
         <div class="animate wheel wheel-2 turn-animation"></div>
       </div>
     </div>
+
+    <div>
+      <button id="speed-btn" class="button active">快一點！</button>
+    </div>
   </div>
   <script>
+    var speedBtn = document.getElementById("speed-btn");
+    speedBtn.addEventListener('click', event => {
+      event.preventDefault();
+      speedBtn.classList.toggle('active');
+      document.getElementsByClassName("turn-animation")[0].classList.toggle("faster");
+      document.getElementsByClassName("turn-animation")[1].classList.toggle("faster");
+      document.getElementsByClassName("wheel-shock-animation")[0].classList.toggle("faster");
+      document.getElementsByClassName("shock-animation")[0].classList.toggle("faster");
+      document.getElementsByClassName("speed-animation-1")[0].classList.toggle("faster");
+      document.getElementsByClassName("speed-animation-2")[0].classList.toggle("faster");
+      document.getElementsByClassName("speed-animation-3")[0].classList.toggle("faster");
+      if (speedBtn.classList.value.indexOf('active') > 0) {
+        speedBtn.innerHTML = "快一點！";
+      } else {
+        speedBtn.innerHTML = "慢慢來";
+      };
+    });
+    // div.className = "classname";
   </script>
 </body>
 </html>
