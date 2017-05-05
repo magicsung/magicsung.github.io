@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>loading...</title>
+  <script src="../../js/jquery-2.2.1.min.js" type="text/javascript" ></script>
   <style>
     * {
       box-sizing: border-box;
@@ -106,8 +107,12 @@
       left: 190px;
     }
     @keyframes turn {
-        0% { transform: rotate3d(0, 0 ,1, 0deg) }
-        100% { transform: rotate3d(0, 0, 1, 360deg) }
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
     }
     @keyframes shock-1px {
         0% { transform: translateY(0) }
@@ -184,28 +189,16 @@
     </div>
 
     <div>
-      <button id="speed-btn" class="button active">快一點！</button>
+      <button id="speed-btn" class="button">切換速度</button>
     </div>
   </div>
   <script>
-    var speedBtn = document.getElementById("speed-btn");
-    speedBtn.addEventListener('click', event => {
+    var speedBtn = $("#speed-btn");
+    speedBtn.click(event => {
       event.preventDefault();
-      speedBtn.classList.toggle('active');
-      document.getElementsByClassName("turn-animation")[0].classList.toggle("faster");
-      document.getElementsByClassName("turn-animation")[1].classList.toggle("faster");
-      document.getElementsByClassName("wheel-shock-animation")[0].classList.toggle("faster");
-      document.getElementsByClassName("shock-animation")[0].classList.toggle("faster");
-      document.getElementsByClassName("speed-animation-1")[0].classList.toggle("faster");
-      document.getElementsByClassName("speed-animation-2")[0].classList.toggle("faster");
-      document.getElementsByClassName("speed-animation-3")[0].classList.toggle("faster");
-      if (speedBtn.classList.value.indexOf('active') > 0) {
-        speedBtn.innerHTML = "快一點！";
-      } else {
-        speedBtn.innerHTML = "慢慢來";
-      };
+      $(".animate").toggleClass("faster");
+      $('body').hide().show(0);
     });
-    // div.className = "classname";
   </script>
 </body>
 </html>
