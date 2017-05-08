@@ -56,12 +56,33 @@
       background-size: 100px 100px;
       background-repeat: no-repeat;
 		}
+    .scroll-bg { background-image: url("./img/imgLoadingBgBreakfast@3x.png") }
     .motorcycle { background-image: url("./img/imgMotionGogoro@3x.png") }
+    .motorcycle-shadow { background-image: url("./img/imgMotionGogoroShadow@3x.png") }
 		.wheel { background-image: url("./img/imgMotionWheel@3x.png") }
 
+    .scroll-bg {
+      position: absolute;
+      top: 10px;
+      left:0;
+      height: 131px;
+      width: 1050px;
+      z-index: 1;
+      background-size: 1050px 131px;
+      background-position: left center;
+      background-repeat: repeat-x;
+    }
     .motorcycle {
       position: absolute;
       z-index: 100;
+    }
+    .motorcycle-shadow {
+      width:120px;
+      height: 15px;
+      background-size: 120px 15px;
+      position: absolute;
+      top: 153px;
+      left: 43px;
     }
     .wheels {
       width: 100%;
@@ -93,6 +114,7 @@
       height: 1px;
       background: #ddd;
       position: absolute;
+      z-index: 0;
     }
     .speed-1 {
       top: 85px;
@@ -139,6 +161,14 @@
           opacity: 0;
         }
     }
+    @keyframes scroll-horizontal {
+      0% {
+        transform: translateX(150px);
+      }
+      100% {
+        transform: translateX(-1000px);
+      }
+    }
     .animate {
       animation-iteration-count: infinite;
       animation-fill-mode: forwards;
@@ -159,6 +189,12 @@
       animation-duration: .7s;
       animation-timing-function: ease-in;
     }
+    .scroll-bg-animation {
+      animation-name: scroll-horizontal;
+      animation-duration: 2.5s;
+      animation-timing-function: linear;
+    }
+    .scroll-bg-animation.faster {animation-duration: 1s;}
     .turn-animation.faster {animation-duration: .2s;}
     .wheel-shock-animation.faster {animation-duration: .4s;}
     .shock-animation.faster {animation-duration: .4s;}
@@ -178,10 +214,12 @@
 <body>
   <div id="center-block">
     <div class="wrapper">
+      <div class="animate img scroll-bg scroll-bg-animation"></div>
       <div class="animate speed speed-1 speed-animation speed-animation-1"></div>
       <div class="animate speed speed-2 speed-animation speed-animation-2"></div>
       <div class="animate speed speed-3 speed-animation speed-animation-3"></div>
       <div class="animate img motorcycle shock-animation"></div>
+      <div class="animate img motorcycle-shadow"></div>
       <div class="animate wheels wheel-shock-animation">
         <div class="animate wheel wheel-1 turn-animation"></div>
         <div class="animate wheel wheel-2 turn-animation"></div>
