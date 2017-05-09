@@ -1,33 +1,143 @@
 <!DOCTYPE html>
 <html lang="zh-Hans-TW">
+
 <head>
-  <meta charset="UTF-8">
-  <title>add to cart</title>
-  <style>
-    #road {
-      display: block;
-      width: 100%;
-      height: 200px;
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      z-index: 1;
-      background: #ccc;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <title>add to cart</title>
+    <style>
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+            padding: 0;
+            margin: 0;
+        }
+
+        #road {
+            display: block;
+            width: 100%;
+            height: 200px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            z-index: 1;
+            background: #eee;
+        }
+
+        .img {
+            width: 200px;
+            height: 200px;
+            content: "";
+            display: inline-block;
+            background-position: center center;
+            background-size: 100px 100px;
+            background-repeat: no-repeat;
+        }
+
+        .motorcycle {
+            background-image: url("./img/imgMotionGogoro@3x.png");
+            position: absolute;
+            z-index: 100;
+            right: 0;
+            bottom: -30px;
+        }
+
+        .wheels {
+            width: 200px;
+            height: 50px;
+            position: absolute;
+            right: -3px;
+            z-index: 10;
+            bottom: -13px;
+        }
+
+        .wheel {
+            background-image: url("./img/imgMotionWheel@3x.png");
+            width: 30px;
+            height: 30px;
+            content: "";
+            display: inline-block;
+            background-position: center center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            position: relative;
+        }
+
+        .wheel-1 {
+            top: 0;
+            left: 57px;
+        }
+
+        .wheel-2 {
+            top: 0;
+            left: 91px;
+        }
+    </style>
 </head>
-<body>
-  <div id="road">
-  </div>
-  <script src="../../js/anime.min.js"></script>
-  <script>
-    // var cssSelector = anime({
-    //   targets: '#road',
-    //   translateY: "-200px",
-    //   direction: 'alternate',
-    //   delay: 300,
-    //   loop: true
-    // });
-  </script>
+
+<body id="body">
+    <!-- <div id="road"></div> -->
+    <div class="img motorcycle"></div>
+    <div class="img wheels">
+        <div class="wheel wheel-1 turn-animation"></div>
+        <div class="wheel wheel-2 turn-animation"></div>
+    </div>
+    <script src="../../js/anime.min.js"></script>
+    <script>
+        var serial = 0;
+        // var cssSelector = anime({
+        //     targets: ['.motorcycle', '.wheels'],
+        //     duration: 1000,
+        //     translateX: function() {
+        //         return document.body.clientWidth - 200
+        //     },
+        //     direction: 'alternate',
+        //     loop: false
+        // });
+
+        document.querySelector('html').addEventListener('click', e => {
+
+            var element = document.getElementById("body");
+            var p = document.createElement("span");
+
+            p.classList.add(`point-${serial}`);
+            p.style.position = 'absolute';
+            p.style.top = e.layerY - 5 + 'px';
+            p.style.left = e.layerX - 5 + 'px';
+            p.style.borderRadius = '50%';
+            p.style.width = '30px';
+            p.style.height = '30px';
+            p.style.backgroundColor = '#ccc';
+
+            element.appendChild(p);
+            serial++;
+
+            let endX = (document.body.clientWidth - e.layerX) * 2 - 290;
+            let endY = (document.body.clientHeight - e.layerY) * 2 - 170;
+
+            var pointAnimate = anime({
+                targets: p,
+                translateX: [
+                  { value: 50, duration: 1000, delay: 0, easing: 'easeOutQuint', elasticity: 0 },
+                  { value: endX/2, duration: 600, delay: 0, easing: 'easeInQuart', elasticity: 0 }
+                ],
+                translateY: [
+                  { value: -100, duration: 1000, delay: 0, easing: 'easeOutQuint', elasticity: 0 },
+                  { value: endY/2, duration: 600, delay: 0, easing: 'easeInQuart', elasticity: 0 }
+                ],
+                loop: false
+            });
+
+            var motor = anime({
+                targets: '.motorcycle',
+                delay: 1600,
+                duration: 300,
+                scale: [1, 1.1, 1],
+                direction: 'alternate',
+                loop: false
+            });
+        });
+    </script>
 </body>
+
 </html>
