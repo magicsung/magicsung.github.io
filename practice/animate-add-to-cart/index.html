@@ -76,66 +76,56 @@
 </head>
 
 <body id="body">
-    <!-- <div id="road"></div> -->
     <div class="img motorcycle"></div>
     <div class="img wheels">
         <div class="wheel wheel-1 turn-animation"></div>
         <div class="wheel wheel-2 turn-animation"></div>
     </div>
-    <script src="../../js/anime.min.js"></script>
+
+    <script src="../../js/jquery-2.2.1.min.js" type="text/javascript"></script>
+    <script src="../../js/jquery.path.js" type="text/javascript"></script>
     <script>
         var serial = 0;
-        // var cssSelector = anime({
-        //     targets: ['.motorcycle', '.wheels'],
-        //     duration: 1000,
-        //     translateX: function() {
-        //         return document.body.clientWidth - 200
-        //     },
-        //     direction: 'alternate',
-        //     loop: false
-        // });
 
-        document.querySelector('html').addEventListener('click', e => {
+        $('html').click(e => {
+            let point = document.createElement("span");
+            point.classList.add(`point-${serial}`);
+            point.style.position = 'absolute';
+            point.style.top = e.clientY - 5 + 'px';
+            point.style.left = e.clientX - 5 + 'px';
+            point.style.borderRadius = '50%';
+            point.style.width = '15px';
+            point.style.height = '15px';
+            point.style.backgroundColor = '#17a9eb';
 
-            var element = document.getElementById("body");
-            var p = document.createElement("span");
-
-            p.classList.add(`point-${serial}`);
-            p.style.position = 'absolute';
-            p.style.top = e.layerY - 5 + 'px';
-            p.style.left = e.layerX - 5 + 'px';
-            p.style.borderRadius = '50%';
-            p.style.width = '30px';
-            p.style.height = '30px';
-            p.style.backgroundColor = '#ccc';
-
-            element.appendChild(p);
+            $("body").append(point);
             serial++;
 
-            let endX = (document.body.clientWidth - e.layerX) * 2 - 290;
-            let endY = (document.body.clientHeight - e.layerY) * 2 - 170;
+            let endX = (document.body.clientWidth - e.clientX) * 2 - 290;
+            let endY = (document.body.clientHeight - e.clientY) * 2 - 170;
 
-            var pointAnimate = anime({
-                targets: p,
-                translateX: [
-                  { value: 50, duration: 1000, delay: 0, easing: 'easeOutQuint', elasticity: 0 },
-                  { value: endX/2, duration: 600, delay: 0, easing: 'easeInQuart', elasticity: 0 }
-                ],
-                translateY: [
-                  { value: -100, duration: 1000, delay: 0, easing: 'easeOutQuint', elasticity: 0 },
-                  { value: endY/2, duration: 600, delay: 0, easing: 'easeInQuart', elasticity: 0 }
-                ],
-                loop: false
-            });
+            let bezier_curve = {
+                start: {
+                    x: e.clientX - 7.5,
+                    y: e.clientY - 7.5,
+                    angle: 270
+                },
+                end: {
+                    x: document.body.clientWidth - 140,
+                    y: document.body.clientHeight - 90,
+                    angle: 50,
+                    length: 1
+                }
+            }
 
-            var motor = anime({
-                targets: '.motorcycle',
-                delay: 1600,
-                duration: 300,
-                scale: [1, 1.1, 1],
-                direction: 'alternate',
-                loop: false
-            });
+            $(point).animate({
+                path: new $.path.bezier(bezier_curve)
+            })
+
+            setTimeout(() => {
+                $(point).remove()
+            }, 1200);
+
         });
     </script>
 </body>
