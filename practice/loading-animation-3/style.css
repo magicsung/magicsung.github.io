@@ -6,19 +6,53 @@ html, body {
 }
 
 #center-block {
-    width: 400px;
-    height: 400px;
+    width: 100px;
+    height: 90px;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    overflow: hidden;
+    backface-visibility: hidden;
 }
-
-.logo-line {
-    fill: #fff;
-    transition: all .5s;
+.loading-wrap {
+    content: "";
+    background-color: #000;
+    width: 100%;
+    height: 100%;
+    -webkit-mask-image: url("./sunpride-logo-mask.png");
+    background-size: cover;
 }
-
-.logo-line-gold {
+#center-block .fill {
+    animation-name: fillAction;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(.2, .3, .8, .4, .5);
+    animation-duration: 4s;
+    animation-fill-mode: forwards;
+    animation-direction: alternate;
+}
+#center-block #waveShape {
+    animation-name: waveAction;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-duration: 0.5s;
+    width: 200px;
+    height: 200px;
     fill: #c8a06e;
+}
+@keyframes fillAction {
+    0% {
+        transform: translate(0, 100px);
+    }
+    100% {
+        transform: translate(0, -5px);
+    }
+}
+@keyframes waveAction {
+    0% {
+        transform: translate(-150px, 0);
+    }
+    100% {
+        transform: translate(0, 0);
+    }
 }
